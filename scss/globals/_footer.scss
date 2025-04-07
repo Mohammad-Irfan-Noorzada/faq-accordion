@@ -1,0 +1,8 @@
+@use 'function' as m;
+
+.footer {
+    text-align: center;
+    font-size: m.rem(11);
+    color: hsl(228, 45%, 44%); 
+    margin-top: m.rem(-70);
+}

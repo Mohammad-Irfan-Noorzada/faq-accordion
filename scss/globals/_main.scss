@@ -1,0 +1,121 @@
+@use "function" as x;
+
+.main {
+    padding: x.rem(142) 0;
+
+    @include breakpoint('large') {
+        padding: x.rem(167) 0;
+    }
+
+    &__header {
+        display: flex;
+        gap: x.rem(26);
+
+
+        @include breakpoint('large') {
+            padding-bottom: 0;
+        }
+
+        & img {
+            width: x.rem(22);
+            
+            @include breakpoint('medium') {
+                width: x.rem(30);
+            }
+             
+            @include breakpoint('large') {
+                width: x.rem(36);
+            } 
+        }
+
+        & h1 {
+            font-size: x.rem(30);
+            font-weight: 700;
+
+            @include breakpoint('medium') {
+                font-size: x.rem(38);
+            } 
+
+            @include breakpoint('large') {
+                font-size: x.rem(49);
+            }
+        }
+    }
+
+    &__section {
+        background-color: $white;
+        min-width: x.rem(300);
+        max-width: 70%;
+        margin: 0 auto;
+        padding: x.rem(24);
+        padding-bottom: x.rem(8);
+        border-radius: x.rem(8);
+
+        @include breakpoint('large') {
+            max-width: 40%;
+            padding: x.rem(40);
+            padding-bottom: x.rem(18);
+            border-radius: x.rem(16);
+        }
+
+        @media (max-width: 350px) {
+            min-width: x.rem(250);
+        }
+    }
+
+    &__description {
+        max-height: 0;
+        overflow: hidden;
+        transition: .3s;
+
+        & p {
+            font-size: x.rem(13);
+            color: $grayish-purple;
+            padding: x.rem(8) 0 x.rem(16);
+            
+            @include breakpoint('large') {
+                font-size: x.rem(15);
+                padding-top: x.rem(10);
+            }
+        }
+    }
+
+    &__item:not(:last-child) {
+        border-bottom: x.rem(2) solid $light-pink;
+    }
+
+    &__icons img {
+        min-width: x.rem(24);
+    }
+
+    &__minus-icon {
+        display: none;
+    }
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    width: 100%;
+    padding: x.rem(16) 0;
+    font-family: $primary-family;
+    font-size: x.rem(16);
+    font-weight: 600;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: x.rem(10);
+    border: 0;
+    transition: .3s;
+
+    &:hover {
+        color: purple;
+    }
+
+    @include breakpoint('large') {
+        padding: x.rem(20) 0;
+        font-size: x.rem(17);
+        gap: x.rem(6);
+    } 
+}
